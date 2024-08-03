@@ -1,4 +1,4 @@
-const Expense=require('..models/Expense')
+const Expense=require('../models/Expense')
 
 exports.addExpense=async(req,res)=>{
     const {amount,category}=req.body
@@ -15,7 +15,7 @@ exports.addExpense=async(req,res)=>{
         res.status(400).json({error:error.message})
     }
 }
-exports.getExpense=async(req,res)=>{
+exports.getExpenses=async(req,res)=>{
     try{
         const expenses= await Expense.find({user:req.user.id})
         res.json(expenses)
