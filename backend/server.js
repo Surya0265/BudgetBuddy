@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 const jwtSecret = process.env.JWT_SECRET;
-console.log(`JWT Secret: ${jwtSecret}`);
+
 
 app.use('/api/users', userRoutes);
 app.use('/api/expenses', protect,expenseRoutes);
